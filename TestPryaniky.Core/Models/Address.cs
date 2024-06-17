@@ -1,7 +1,7 @@
 ﻿
 namespace TestPryaniky.Core.Models;
 
-public class Address
+public record Address
 {
     public required string Street { get; set; }
     public required string City { get; set; }
