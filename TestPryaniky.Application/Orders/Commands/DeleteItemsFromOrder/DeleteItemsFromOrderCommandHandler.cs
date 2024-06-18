@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Commands.DeleteItemsFromOrder;
+﻿namespace TestPryaniky.Application.Orders.Commands;
 
 public class DeleteItemsFromOrderCommandHandler(IOrderRepository orderRepository)
     : ICommandHandler<DeleteItemsFromOrderCommand, DeleteItemsFromOrderResult>

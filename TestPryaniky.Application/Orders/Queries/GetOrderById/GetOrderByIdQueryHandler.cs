@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Queries.GetOrderById;
+﻿namespace TestPryaniky.Application.Orders.Queries;
 
 public class GetOrderByIdQueryHandler(IOrderRepository orderRepository)
     : IQueryHandler<GetOrderByIdQuery, GetOrderByIdResult>

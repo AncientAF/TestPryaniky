@@ -1,0 +1,41 @@
+﻿services:
+  testpryaniky.api:
+    image: testpryaniky.api
+    container_name: testpryaniky.api
+    restart: always
+    build:
+      context: .
+      dockerfile: TestPryaniky.API/Dockerfile
+    ports:
+      - "5040:8080"
+    depends_on:
+      - testpryaniky.seq
+      - testpryaniky.db
+    environment:
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__Database=Server=testpryaniky.db;port=5432;Database=PryanikyDb;User Id=postgres;Password=postgres;Include Error Detail=true
+      - ConnectionStrings__Seq=http://testpryaniky.seq:5341
+        
+  testpryaniky.db:
+    image: postgres
+    container_name: testpryaniky.db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=PryanikyDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - testpryaniky.db.data:/var/lib/postresql/data/
+      
+  testpryaniky.seq:
+    image: datalust/seq:latest
+    container_name: testpryaniky.seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5341:5341"
+      - "80:80"
+        
+volumes:
+  testpryaniky.db.data:

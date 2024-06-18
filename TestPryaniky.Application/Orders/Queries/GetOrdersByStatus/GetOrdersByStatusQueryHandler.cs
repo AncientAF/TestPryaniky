@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Queries.GetOrdersByStatus;
+﻿namespace TestPryaniky.Application.Orders.Queries;
 
 public class GetOrdersByStatusQueryHandler(IOrderRepository orderRepository)
     : IQueryHandler<GetOrdersByStatusQuery, GetOrdersByStatusResult>

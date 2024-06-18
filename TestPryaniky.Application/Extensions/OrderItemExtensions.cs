@@ -1,14 +1,16 @@
-﻿namespace TestPryaniky.Application.Extensions;
+﻿using TestPryaniky.Application.Orders;
+
+namespace TestPryaniky.Application.Extensions;
 
 public static class OrderItemExtensions
 {
-    public static List<OrderItem> ToOrderItemList(this List<(Guid productId, int quantity)> items, Guid orderId)
+    public static List<OrderItem> ToOrderItemList(this List<ProductIdWithQuantity> items, Guid orderId)
     {
         return items.Select(l => new OrderItem
         {
             OrderId = orderId,
-            Quantity = l.quantity,
-            ProductId = l.productId
+            Quantity = l.Quantity,
+            ProductId = l.ProductId
         }).ToList();
     }
 }

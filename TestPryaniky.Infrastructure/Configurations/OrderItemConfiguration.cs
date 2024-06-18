@@ -8,7 +8,7 @@ public class OrderItemConfiguration : IEntityTypeConfiguration<OrderItem>
     {
         builder.HasKey(oi => oi.Id);
 
-        builder.HasOne<Order>().WithMany().HasForeignKey(oi => oi.OrderId).IsRequired();
+        builder.HasOne<Order>().WithMany(o => o.OrderItems).HasForeignKey(oi => oi.OrderId).IsRequired();
 
         builder.HasOne(oi => oi.Product).WithMany().HasForeignKey(oi => oi.ProductId);
 

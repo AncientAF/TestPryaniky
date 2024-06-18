@@ -1,7 +1,6 @@
-﻿using TestPryaniky.Application.Orders.Queries.GetOrdersPaginated;
-using TestPryaniky.Application.Pagination;
+﻿using TestPryaniky.Application.Pagination;
 
-namespace TestPryaniky.Application.Products.Queries.GetProductsPaginated;
+namespace TestPryaniky.Application.Products.Queries;
 
 public class GetProductsPaginatedQueryHandler(IProductRepository productRepository)
     : IQueryHandler<GetProductsPaginatedQuery, GetProductsPaginatedResult>

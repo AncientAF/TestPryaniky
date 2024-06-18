@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Products.Commands.DeleteProduct;
+﻿namespace TestPryaniky.Application.Products.Commands;
 
 public class DeleteProductCommandHandler(IProductRepository productRepository)
     : ICommandHandler<DeleteProductCommand, DeleteProductResult>

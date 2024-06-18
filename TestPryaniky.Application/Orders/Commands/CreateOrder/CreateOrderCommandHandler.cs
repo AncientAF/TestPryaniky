@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Commands.CreateOrder;
+﻿namespace TestPryaniky.Application.Orders.Commands;
 
 public class CreateOrderCommandHandler(IOrderRepository orderRepository)
     : ICommandHandler<CreateOrderCommand, CreateOrderResult>

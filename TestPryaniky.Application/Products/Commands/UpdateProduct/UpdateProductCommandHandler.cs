@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Products.Commands.UpdateProduct;
+﻿namespace TestPryaniky.Application.Products.Commands;
 
 public class UpdateProductCommandHandler(IProductRepository productRepository)
     : ICommandHandler<UpdateProductCommand, UpdateProductResult>

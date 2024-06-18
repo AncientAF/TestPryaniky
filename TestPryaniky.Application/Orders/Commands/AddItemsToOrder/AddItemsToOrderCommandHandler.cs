@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Commands.AddItemsToOrder;
+﻿namespace TestPryaniky.Application.Orders.Commands;
 
 public class AddItemsToOrderCommandHandler(IOrderRepository orderRepository)
     : ICommandHandler<AddItemsToOrderCommand, AddItemsToOrderResult>

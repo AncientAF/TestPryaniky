@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Products.Commands.CreateProduct;
+﻿namespace TestPryaniky.Application.Products.Commands;
 
 public class CreateProductCommandHandler(IProductRepository productRepository)
     : ICommandHandler<CreateProductCommand, CreateProductResult>

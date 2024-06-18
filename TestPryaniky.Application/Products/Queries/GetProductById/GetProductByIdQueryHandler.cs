@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Products.Queries.GetProductById;
+﻿namespace TestPryaniky.Application.Products.Queries;
 
 public class GetProductByIdQueryHandler(IProductRepository productRepository)
     : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>

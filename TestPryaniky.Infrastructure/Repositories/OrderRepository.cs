@@ -26,10 +26,12 @@ public class OrderRepository(ApplicationDbContext dbContext)
     public async Task<(IEnumerable<Order> orders, long count)> GetPaginated(int pageIndex, int pageSize,
         CancellationToken cancellationToken)
     {
-        var orders = await dbContext.Orders.AsNoTracking()
-            .Skip(pageIndex * pageSize).Take(pageSize)
-            .OrderBy(o => o.TotalPrice)
-            .ToListAsync(cancellationToken);
+        var orders = (await dbContext.Orders.AsNoTracking()
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
+                .Skip(pageIndex * pageSize).Take(pageSize)
+                .ToListAsync(cancellationToken)
+                ).OrderBy(o => o.TotalPrice);
 
         var count = await dbContext.Orders.LongCountAsync(cancellationToken);
 
@@ -72,7 +74,7 @@ public class OrderRepository(ApplicationDbContext dbContext)
 
         if (order == null) throw new OrderNotFoundException(id);
         
-        order.OrderItems = order.OrderItems.Concat(items);
+        order.OrderItems = order.OrderItems.Concat(items).ToList();
 
         await dbContext.SaveChangesAsync(cancellationToken);
     }

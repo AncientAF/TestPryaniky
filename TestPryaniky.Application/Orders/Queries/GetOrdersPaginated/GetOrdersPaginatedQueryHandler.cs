@@ -1,6 +1,6 @@
 ﻿using TestPryaniky.Application.Pagination;
 
-namespace TestPryaniky.Application.Orders.Queries.GetOrdersPaginated;
+namespace TestPryaniky.Application.Orders.Queries;
 
 public class GetOrdersPaginatedQueryHandler(IOrderRepository orderRepository)
     : IQueryHandler<GetOrdersPaginatedQuery, GetOrdersPaginatedResult>

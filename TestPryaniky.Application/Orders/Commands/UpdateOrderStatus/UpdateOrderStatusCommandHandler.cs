@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Commands.UpdateOrderStatus;
+﻿namespace TestPryaniky.Application.Orders.Commands;
 
 public class UpdateOrderStatusCommandHandler(IOrderRepository orderRepository)
     : ICommandHandler<UpdateOrderStatusCommand, UpdateOrderStatusResult>

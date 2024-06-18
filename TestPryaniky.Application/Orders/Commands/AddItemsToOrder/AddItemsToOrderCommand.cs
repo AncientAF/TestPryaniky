@@ -1,4 +1,4 @@
-﻿namespace TestPryaniky.Application.Orders.Commands.AddItemsToOrder;
+﻿namespace TestPryaniky.Application.Orders.Commands;
 
-public record AddItemsToOrderCommand(Guid Id, List<(Guid productId, int quantity)> Items) : ICommand<AddItemsToOrderResult>;
+public record AddItemsToOrderCommand(Guid Id, List<ProductIdWithQuantity> Items) : ICommand<AddItemsToOrderResult>;
 public record AddItemsToOrderResult(bool IsSuccess);
