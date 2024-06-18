@@ -10,25 +10,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90754454-0cc3-42d3-b43f-cfcf14b5c1b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Configurations/OrderConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Configurations/OrderItemConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Configurations/ProductConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Extensions/InitialData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Extensions/OrderExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Extensions/ProductExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Interceptors/AuditableEntityInterceptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Repositories/OrderRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/Repositories/ProductRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Abstractions/ICommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Abstractions/ICommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Abstractions/IQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Abstractions/IQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Behaviors/LoggingBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Behaviors/ValidationBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Dtos/AddressDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Dtos/OrderDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Dtos/OrderItemDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Dtos/ProductDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/AddItemsToOrder/AddItemsToOrderCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/AddItemsToOrder/AddItemsToOrderCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/CreateOrder/CreateOrderCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/CreateOrder/CreateOrderCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/DeleteItemsFromOrder/DeleteItemsFromOrderCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/DeleteItemsFromOrder/DeleteItemsFromOrderCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/DeleteOrder/DeleteOrderCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/DeleteOrder/DeleteOrderCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/UpdateOrder/UpdateOrderCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/UpdateOrder/UpdateOrderCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/UpdateOrderStatus/UpdateOrderStatusCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Commands/UpdateOrderStatus/UpdateOrderStatusCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Queries/GetOrderById/GetOrderByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Queries/GetOrderById/GetOrderByIdQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Queries/GetOrdersByStatus/GetOrdersByStatusQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Queries/GetOrdersByStatus/GetOrdersByStatusQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Queries/GetOrdersPaginated/GetOrdersPaginatedQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Orders/Queries/GetOrdersPaginated/GetOrdersPaginatedQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Commands/CreateProduct/CreateProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Commands/CreateProduct/CreateProductCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Commands/DeleteProduct/DeleteProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Commands/DeleteProduct/DeleteProductCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Commands/UpdateProduct/UpdateProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Commands/UpdateProduct/UpdateProductCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Queries/GetProductById/GetProductByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Queries/GetProductById/GetProductByIdQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Queries/GetProductByName/GetProductByNameQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Queries/GetProductByName/GetProductByNameQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Queries/GetProductsPaginated/GetProductsPaginatedQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPryaniky.Application/Products/Queries/GetProductsPaginated/GetProductsPaginatedQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TestPryaniky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestPryaniky/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestPryaniky.Application/TestPryaniky.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Application/TestPryaniky.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPryaniky.Core/Exceptions/ProductNotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Core/Exceptions/ProductNotFoundException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPryaniky.Core/Models/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Core/Models/Address.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPryaniky.Core/Models/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Core/Models/OrderItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPryaniky.Core/Repositories/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Core/Repositories/IOrderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPryaniky.Core/Repositories/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Core/Repositories/IProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPryaniky.Infrastructure/TestPryaniky.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TestPryaniky.Infrastructure/TestPryaniky.Infrastructure.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +152,8 @@
       <workItem from="1718522797300" duration="2444000" />
       <workItem from="1718557197776" duration="438000" />
       <workItem from="1718561060219" duration="6662000" />
-      <workItem from="1718618254261" duration="1796000" />
+      <workItem from="1718618254261" duration="4287000" />
+      <workItem from="1718633690791" duration="1645000" />
     </task>
     <servers />
   </component>
