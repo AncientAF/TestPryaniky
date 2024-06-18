@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using MediatR;
+﻿using MediatR;
 
 namespace TestPryaniky.Application.Behaviors;
 

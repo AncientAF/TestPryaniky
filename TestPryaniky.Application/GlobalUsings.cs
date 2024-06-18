@@ -1,5 +1,6 @@
 ﻿// Global using directives
 
+global using FluentValidation;
 global using Mapster;
 global using TestPryaniky.Application.Abstractions;
 global using TestPryaniky.Application.Dtos;
