@@ -30,18 +30,12 @@ public static class DependencyInjection
     {
         app.UseExceptionHandler();
         
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.MapControllers();
         
-        if (app.Environment.IsDevelopment())
-        {
-            await app.InitialiseDatabaseAsync();
-        }
+        await app.InitialiseDatabaseAsync();
         
         return app;
     }
