@@ -34,25 +34,25 @@ public class OrderController(ISender sender)
     }
     
     [HttpPatch]
-    public async Task<IActionResult> UpdateStatus([AsParameters] UpdateOrderStatusCommand command)
+    public async Task<IActionResult> UpdateStatus(Guid id, OrderStatus status)
     {
-        var result = await sender.Send(command);
+        var result = await sender.Send(new UpdateOrderStatusCommand(id, status));
 
         return Ok(result);
     }
     
     [HttpDelete]
     [Route("items")]
-    public async Task<IActionResult> UpdateStatus([FromBody] DeleteItemsFromOrderCommand command)
+    public async Task<IActionResult> DeleteItems([FromBody] DeleteItemsFromOrderCommand command)
     {
         var result = await sender.Send(command);
 
         return Ok(result);
     }
     
-    [HttpPut]
+    [HttpPost]
     [Route("items")]
-    public async Task<IActionResult> UpdateStatus([FromBody] AddItemsToOrderCommand command)
+    public async Task<IActionResult> AddItems([FromBody] AddItemsToOrderCommand command)
     {
         var result = await sender.Send(command);
 
